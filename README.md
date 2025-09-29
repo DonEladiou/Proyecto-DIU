@@ -4,4 +4,5 @@ Para correr el proyecto hagan pull y ejecuten en su terminal dentro de la raíz 
 
 **npm install**
 
-**npm index.js**
+**node index.js**
+
