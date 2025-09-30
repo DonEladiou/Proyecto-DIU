@@ -7,23 +7,28 @@
 <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Newsreader:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "primary": "#1193d4",
-            "background-light": "#f6f7f8",
-            "background-dark": "#101c22",
-          },
-          fontFamily: {
-            "display": ["Newsreader"]
-          },
-          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-        },
-      },
-    }
-  </script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1193d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
@@ -34,24 +39,20 @@
 <div class="flex items-center gap-8">
 <div class="flex items-center gap-2 text-slate-900 dark:text-white">
 <span class="material-symbols-outlined text-primary text-3xl">import_contacts</span>
-<h1 class="text-xl font-bold">BookWise</h1>
+<h1 class="text-xl font-bold">BibliotecaUSM</h1>
 </div>
 <nav class="hidden md:flex items-center gap-6">
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Inicio</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Explorar</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Mi Biblioteca</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Mis Reserva</a>
 </nav>
 </div>
 <div class="flex items-center gap-4">
-<div class="hidden md:flex items-center bg-slate-200 dark:bg-slate-800 rounded-lg px-3">
-<span class="material-symbols-outlined text-slate-500">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-sm w-32 focus:w-48 transition-all duration-300" placeholder="Search" type="text"/>
-</div>
 <button class="relative rounded-full p-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
 <span class="material-symbols-outlined">notifications</span>
 </button>
-<button>
-<img alt="User avatar" class="size-9 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI8sg1H-PQa_SvYwWW2htNAVxQCfrLd_jCmKf7uzOiBryYgp9--FHVGO5HSj2IPP2PMtL9uYiK5jidI4rpdOY4d_Tk3SDCNcE2TfvqPVwehnIqvVkv2Ay2LLmJDtcySZ2yxpr2ErWrJtn0qFeliuN97t0yb_8dUg2tesejxoLSSQk_haMZU2xlEsNVaI35mH9iDrPxjHzE9t2z12snnzVUVkHIOkZuVv0Kmg-yJaHJWuRixtdXaaJZedY-UQKdyMmVoEKjpC6BM44"/>
+<button class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
 </button>
 </div>
 </div>
@@ -61,7 +62,7 @@
 <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
 <div class="max-w-3xl mx-auto text-center mb-12">
 <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Bienvenido a BibliotecaUSM</h2>
-<p class="text-slate-600 dark:text-slate-400">Busca en nuestra extensa colección de libros, desde clásicos hasta los últimos lanzamientos.</p>
+<p class="text-slate-600 dark:text-slate-400">Busca el libro que necesitas, desde educacionales hasta entretenimiento para tus ratos libres.</p>
 </div>
 <div class="max-w-2xl mx-auto mb-10">
 <div class="relative">
@@ -120,43 +121,23 @@
 </div>
 </div>
 </section>
-<section>
-<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Recomendaciones para ti</h3>
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-x-6 gap-y-8">
-<div class="group">
-<div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
-<img alt="Book cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmhkycGlzQtmF_fD0TapkHjIsJnGVS16O2aHUPXIlq4weZMcFFkOUj8kJFUOyw7Q3HBq-M0T8wCZKg1IVjpORc1dioTvKQl3FeG8v1uhzbr7-i5a6YjgXCU1kVxkjljcHJYEJYLlcsTTwE5WWPWDobV4VykDrlpfYT6oYKApN6luXKbEsmxTDnea48qD4OZ4LwtVAOFXs-NRB0x61Opx9pdeXXVzK_nsxvYhz4RrBELsGmfiCiLSduMPjRFvfn0YDnOhOR0KbyszE"/>
+<section class="bg-slate-100 dark:bg-slate-900 rounded-xl p-8">
+<div class="text-center md:text-left">
+    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Reserva una sala de estudio</h3>
+    <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-md mx-auto md:mx-0">¿Necesitas un lugar tranquilo para concentrarte? Reserva una de nuestras salas de estudio individuales o grupales.</p>
+    <a href="/reservas"
+       class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2 mx-auto md:mx-0">
+        <span class="material-symbols-outlined">meeting_room</span>
+        Reservar ahora
+    </a>
 </div>
-<h4 class="font-bold truncate text-slate-900 dark:text-white">El Legado de los Ancestros</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400">Alistair Finch</p>
-</div>
-<div class="group">
-<div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
-<img alt="Book cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBye6NCpWUYh5h7AAP8c0yvsas5ZaSYc96W_v_NBw0mjaJS9sKa0e2j_kavUUfexzJQ5zYaxJJI_S0_SIY7lml9dU_jS7k3peXHSX4Ec1KuJhpBaftNdn0Xjqp5Bcwuqj8vxENXp2OCQ3TCU47W_wkaYzAB78JT1s_sDqPLLqb6m5Ocue-R4vp1QfSVtJqmgdom9ejPkGbZ1ykvXdd7HN_1I9QM8rAQ8xS80BPDMoqHk0lFlxaqSqi1yQr2R0YTaRggHsx24ubaP3A"/>
-</div>
-<h4 class="font-bold truncate text-slate-900 dark:text-white">El Enigma de la Isla</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400">Seraphina Grey</p>
-</div>
-<div class="group">
-<div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
-<img alt="Book cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChqBfJt0BRZnhxu99wq8shVZMvwuzvGDMbGOigYK5IiPpk_otF0XU_3D_w6HNyvp5aySxzrRZ8ffibjiKdeLO_4BW6_iZ6IWep44pV8JHekkOZausr1HYMLM87Xg7hLhc-E0otj1YLJ07qjJ4mhnh-8-pp0SXKNzyPjXqgG-kF4z1Q1x2rN8I5t65sMks07DHI7yrBLIlSsGEkbIQc_5v4WAbBcaSd-2oyvcebYCatQb2pwTLOcj5xRtUmQ41tMGUGvTgqUeJNJ10"/>
-</div>
-<h4 class="font-bold truncate text-slate-900 dark:text-white">Bajo el Cielo de Toscana</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400">Lorenzo Bianchi</p>
-</div>
-<div class="group">
-<div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
-<img alt="Book cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx0mvgepjwnzjX8ZfjZGmj1rtjkEUlezlWGs1qLz5X9wNHugRuQndj3ZkMfOyN9DKyY3J6cC06TbyJvZ7tlF5_p1PRLTieis1UMOb6gceEoJRH-_SqxRvjosaQ-Zo5EiUh7vgkYczBJc373AH33tBjC_utU0x-lVRCcxo9Raw5VuZ6gYvo7GU1eIrDWHkuL-kFHkM1Hqewj_lQ-ry8Cy4yfzuBao2a0vuJK_A5IgZ4ZZxc_rF-633acZn7xmNvfKh-OjRuZv1Y8ZM"/>
-</div>
-<h4 class="font-bold truncate text-slate-900 dark:text-white">La Trampa del Tiempo</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400">Evelyn Reed</p>
-</div>
-<div class="group">
-<div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
-<img alt="Book cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPUu2r6ALZT4chAxDplAJuFz9kCPtl5HViZkR_YtpGsc_lNdk9FpMMUih6NTglsvuqZ0BXfSgfgKlg39qJArQCT7d3fqiW1cVib0kanyIVhrhxaIKanJxKwNIeYlw9roVoBsk9IGR2RLLbI9IxjfeCKeDGM1-pANuAPOjRYC9sw5RuY-njo5XonqPR806JzGrx2eMAwkoPKX4rGAedPtPLKxY53pSxcZRly4_cV6_Rjrxh2FxqC3njsMlgu1JqAbsPwRpwvTQNAXM"/>
-</div>
-<h4 class="font-bold truncate text-slate-900 dark:text-white">Secretos de la Montaña</h4>
-<p class="text-sm text-slate-500 dark:text-slate-400">Jasper Stone</p>
+<div class="text-center md:text-left">
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Explora nuestros servicios</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-6 max-w-md mx-auto md:mx-0">Desde acceso a bases de datos académicas hasta eventos, descubre todo lo que nuestra biblioteca tiene para ofrecer.</p>
+<button class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2 mx-auto md:mx-0">
+<span class="material-symbols-outlined">widgets</span>
+                            Nuestros servicios
+                        </button>
 </div>
 </div>
 </section>
