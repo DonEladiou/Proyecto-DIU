@@ -59,10 +59,9 @@
 <h2 class="text-xl font-bold">BookWise</h2>
 </div>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium hover:text-primary" href="#">Inicio</a>
-<a class="text-sm font-medium hover:text-primary" href="#">Explorar</a>
-<a class="text-sm font-medium hover:text-primary" href="#">Mis libros</a>
-<a class="text-sm font-medium hover:text-primary" href="#">Comunidad</a>
+<a class="text-sm font-medium hover:text-primary" href="index.html">Inicio</a>
+<a class="text-sm font-medium hover:text-primary" href="busqueda.html">Explorar</a>
+<a class="text-sm font-medium hover:text-primary" href="mis-reservas.html">Mis Reservas</a>
 </nav>
 <div class="flex items-center gap-4">
 <button class="flex items-center justify-center size-10 rounded-full bg-background-light dark:bg-background-dark hover:bg-primary/10 dark:hover:bg-primary/20">
@@ -83,40 +82,40 @@ person
 <div>
 <h2 class="text-xl font-bold mb-4">Disponibilidad de salas de estudio</h2>
 <div class="space-y-4">
-<div class="p-4 rounded-lg border border-border-light dark:border-border-dark flex justify-between items-center">
+<div class="p-4 rounded-lg border border-border-light dark:border-border-dark flex justify-between items-center library-option" data-library="Casa Central">
 <div>
 <p class="font-bold">Biblioteca Casa Central</p>
 <p class="text-sm text-subtle-light dark:text-subtle-dark">08:15 – 19:45</p>
 </div>
-<button class="bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">Seleccionar</button>
+<button class="library-btn bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">Seleccionar</button>
 </div>
-<div class="p-4 rounded-lg border border-border-light dark:border-border-dark flex justify-between items-center">
+<div class="p-4 rounded-lg border border-border-light dark:border-border-dark flex justify-between items-center library-option" data-library="Sede Viña del Mar">
 <div>
 <p class="font-bold">Biblioteca Sede Viña del Mar</p>
 <p class="text-sm text-subtle-light dark:text-subtle-dark">08:30 – 20:30</p>
 </div>
-<button class="bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">Seleccionar</button>
+<button class="library-btn bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">Seleccionar</button>
 </div>
-<div class="p-4 rounded-lg border border-border-light dark:border-border-dark flex justify-between items-center">
+<div class="p-4 rounded-lg border border-border-light dark:border-border-dark flex justify-between items-center library-option" data-library="Sede Concepción">
 <div>
 <p class="font-bold">Biblioteca Sede Concepción</p>
 <p class="text-sm text-subtle-light dark:text-subtle-dark">08:10 – 20:15</p>
 </div>
-<button class="bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">Seleccionar</button>
+<button class="library-btn bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">Seleccionar</button>
 </div>
-<div class="p-4 rounded-lg border border-border-light dark:border-border-dark flex justify-between items-center">
+<div class="p-4 rounded-lg border border-border-light dark:border-border-dark flex justify-between items-center library-option" data-library="Campus Vitacura">
 <div>
 <p class="font-bold">Biblioteca Campus Vitacura</p>
 <p class="text-sm text-subtle-light dark:text-subtle-dark">08:15 – 19:45</p>
 </div>
-<button class="bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">Seleccionar</button>
+<button class="library-btn bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">Seleccionar</button>
 </div>
-<div class="p-4 rounded-lg border border-border-light dark:border-border-dark flex justify-between items-center">
+<div class="p-4 rounded-lg border border-border-light dark:border-border-dark flex justify-between items-center library-option" data-library="Campus San Joaquín">
 <div>
 <p class="font-bold">Biblioteca Campus San Joaquín</p>
 <p class="text-sm text-subtle-light dark:text-subtle-dark">08:00 – 20:00</p>
 </div>
-<button class="bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">Seleccionar</button>
+<button class="library-btn bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">Seleccionar</button>
 </div>
 </div>
 </div>
@@ -125,11 +124,11 @@ person
 <div class="grid md:grid-cols-2 gap-8">
 <div class="bg-background-light dark:bg-background-dark p-4 rounded-lg border border-border-light dark:border-border-dark">
 <div class="flex items-center justify-between mb-4">
-<button class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">
+<button id="prev-month" class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">
 <span class="material-symbols-outlined">chevron_left</span>
 </button>
-<p class="text-base font-bold">Julio 2024</p>
-<button class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">
+<p id="current-month" class="text-base font-bold">Julio 2024</p>
+<button id="next-month" class="p-2 rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">
 <span class="material-symbols-outlined">chevron_right</span>
 </button>
 </div>
@@ -176,10 +175,14 @@ person
 </div>
 </div>
 <div class="space-y-4">
-<select class="w-full h-12 px-4 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark focus:ring-primary focus:border-primary">
-<option>Seleccionar hora</option>
-<option>14:00 - 16:00</option>
-<option>16:00 - 18:00</option>
+<select id="time-selector" class="w-full h-12 px-4 rounded-lg bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark focus:ring-primary focus:border-primary">
+<option value="">Seleccionar hora</option>
+<option value="08:00 - 10:00">08:00 - 10:00</option>
+<option value="10:00 - 12:00">10:00 - 12:00</option>
+<option value="12:00 - 14:00">12:00 - 14:00</option>
+<option value="14:00 - 16:00">14:00 - 16:00</option>
+<option value="16:00 - 18:00">16:00 - 18:00</option>
+<option value="18:00 - 20:00">18:00 - 20:00</option>
 </select>
 </div>
 </div>
@@ -205,16 +208,20 @@ person
 <h2 class="text-xl font-bold mb-4">Resumen de la reserva</h2>
 <div class="border border-border-light dark:border-border-dark rounded-lg">
 <div class="grid grid-cols-3 gap-4 p-4 border-b border-border-light dark:border-border-dark">
+<p class="col-span-1 text-subtle-light dark:text-subtle-dark">Biblioteca</p>
+<p id="summary-library" class="col-span-2 font-medium">Biblioteca Casa Central</p>
+</div>
+<div class="grid grid-cols-3 gap-4 p-4 border-b border-border-light dark:border-border-dark">
 <p class="col-span-1 text-subtle-light dark:text-subtle-dark">Sala</p>
-<p class="col-span-2 font-medium">Sala de lectura principal</p>
+<p id="summary-room" class="col-span-2 font-medium">Sala de lectura principal</p>
 </div>
 <div class="grid grid-cols-3 gap-4 p-4 border-b border-border-light dark:border-border-dark">
 <p class="col-span-1 text-subtle-light dark:text-subtle-dark">Fecha</p>
-<p class="col-span-2 font-medium">15 de julio de 2024</p>
+<p id="summary-date" class="col-span-2 font-medium">5 de julio de 2024</p>
 </div>
 <div class="grid grid-cols-3 gap-4 p-4">
 <p class="col-span-1 text-subtle-light dark:text-subtle-dark">Hora</p>
-<p class="col-span-2 font-medium">14:00 - 16:00</p>
+<p id="summary-time" class="col-span-2 font-medium">Seleccionar hora</p>
 </div>
 </div>
 </div>
@@ -225,11 +232,293 @@ person
                             </p>
 </div>
 <div class="flex justify-end pt-4">
-<button class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors">Confirmar reserva</button>
+<button id="confirm-reservation-btn" class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors">Confirmar reserva</button>
 </div>
 </div>
 </div>
 </div>
 </main>
 </div>
+
+<!-- Modal de confirmación -->
+<div id="confirmation-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+    <div class="bg-white dark:bg-slate-800 rounded-xl p-8 max-w-md mx-4 shadow-2xl">
+        <div class="text-center">
+            <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-green-100 dark:bg-green-900 mb-4">
+                <span class="material-symbols-outlined text-green-600 dark:text-green-400 text-3xl">check_circle</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">¡Reserva Confirmada!</h3>
+            <p class="text-slate-600 dark:text-slate-400 mb-6">Tu reserva ha sido procesada exitosamente. Te enviaremos un correo de confirmación.</p>
+            <div class="space-y-2 mb-6 text-sm">
+                <p class="text-slate-700 dark:text-slate-300"><strong>Biblioteca:</strong> <span id="modal-library"></span></p>
+                <p class="text-slate-700 dark:text-slate-300"><strong>Sala:</strong> <span id="modal-room"></span></p>
+                <p class="text-slate-700 dark:text-slate-300"><strong>Fecha:</strong> <span id="modal-date"></span></p>
+                <p class="text-slate-700 dark:text-slate-300"><strong>Hora:</strong> <span id="modal-time"></span></p>
+            </div>
+            <div class="flex gap-3">
+                <button id="view-reservations" class="flex-1 bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors">
+                    Ver Mis Reservas
+                </button>
+                <button id="close-modal" class="flex-1 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold py-3 px-4 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
+                    Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Estado de la reserva
+let reservationState = {
+    library: 'Casa Central',
+    room: 'Sala de lectura principal',
+    date: new Date(2024, 6, 5), // 5 de julio de 2024
+    time: ''
+};
+
+// Elementos del DOM
+const libraryButtons = document.querySelectorAll('.library-btn');
+const roomInputs = document.querySelectorAll('input[name="room"]');
+const timeSelector = document.getElementById('time-selector');
+const prevMonthBtn = document.getElementById('prev-month');
+const nextMonthBtn = document.getElementById('next-month');
+const currentMonthEl = document.getElementById('current-month');
+
+// Elementos del resumen
+const summaryLibrary = document.getElementById('summary-library');
+const summaryRoom = document.getElementById('summary-room');
+const summaryDate = document.getElementById('summary-date');
+const summaryTime = document.getElementById('summary-time');
+
+// Nombres de meses en español
+const monthNames = [
+    'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+    'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+];
+
+// Función para actualizar el resumen
+function updateSummary() {
+    if (summaryLibrary) summaryLibrary.textContent = `Biblioteca ${reservationState.library}`;
+    if (summaryRoom) summaryRoom.textContent = reservationState.room;
+    if (summaryDate) {
+        const day = reservationState.date.getDate();
+        const month = monthNames[reservationState.date.getMonth()];
+        const year = reservationState.date.getFullYear();
+        summaryDate.textContent = `${day} de ${month} de ${year}`;
+    }
+    if (summaryTime) summaryTime.textContent = reservationState.time || 'Seleccionar hora';
+}
+
+// Función para actualizar el calendario
+function updateCalendar() {
+    const year = reservationState.date.getFullYear();
+    const month = reservationState.date.getMonth();
+    
+    if (currentMonthEl) {
+        currentMonthEl.textContent = `${monthNames[month]} ${year}`;
+    }
+    
+    // Aquí podrías regenerar los días del calendario dinámicamente
+    // Por simplicidad, mantenemos el calendario estático pero funcional
+}
+
+// Event listeners para selección de biblioteca
+libraryButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        // Resetear todos los botones
+        libraryButtons.forEach(b => {
+            b.classList.remove('bg-primary', 'text-white');
+            b.classList.add('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+        });
+        
+        // Activar el botón seleccionado
+        btn.classList.remove('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+        btn.classList.add('bg-primary', 'text-white');
+        
+        // Actualizar estado
+        const libraryOption = btn.closest('.library-option');
+        if (libraryOption) {
+            reservationState.library = libraryOption.dataset.library;
+            updateSummary();
+        }
+    });
+});
+
+// Event listeners para selección de sala
+roomInputs.forEach(input => {
+    input.addEventListener('change', () => {
+        if (input.checked) {
+            const label = input.nextElementSibling;
+            if (label) {
+                reservationState.room = label.textContent.trim();
+                updateSummary();
+            }
+        }
+    });
+});
+
+// Event listener para selección de hora
+if (timeSelector) {
+    timeSelector.addEventListener('change', () => {
+        reservationState.time = timeSelector.value;
+        updateSummary();
+    });
+}
+
+// Event listeners para navegación del calendario
+if (prevMonthBtn) {
+    prevMonthBtn.addEventListener('click', () => {
+        reservationState.date.setMonth(reservationState.date.getMonth() - 1);
+        updateCalendar();
+        updateSummary();
+    });
+}
+
+if (nextMonthBtn) {
+    nextMonthBtn.addEventListener('click', () => {
+        reservationState.date.setMonth(reservationState.date.getMonth() + 1);
+        updateCalendar();
+        updateSummary();
+    });
+}
+
+// Event listener para días del calendario
+document.querySelectorAll('.grid button').forEach(btn => {
+    if (btn.textContent && !isNaN(btn.textContent)) {
+        btn.addEventListener('click', () => {
+            const day = parseInt(btn.textContent);
+            reservationState.date.setDate(day);
+            updateSummary();
+            
+            // Actualizar visualmente el día seleccionado
+            document.querySelectorAll('.grid button').forEach(b => {
+                if (b.textContent && !isNaN(b.textContent)) {
+                    b.classList.remove('bg-primary', 'text-white');
+                    b.classList.add('hover:bg-primary/10', 'dark:hover:bg-primary/20');
+                }
+            });
+            btn.classList.remove('hover:bg-primary/10', 'dark:hover:bg-primary/20');
+            btn.classList.add('bg-primary', 'text-white');
+        });
+    }
+});
+
+// Función para guardar reserva en localStorage
+function saveReservation() {
+    const reservation = {
+        id: Date.now(), // ID único basado en timestamp
+        library: reservationState.library,
+        room: reservationState.room,
+        date: reservationState.date.toISOString(),
+        time: reservationState.time,
+        createdAt: new Date().toISOString(),
+        status: 'confirmada'
+    };
+    
+    // Obtener reservas existentes
+    let reservations = JSON.parse(localStorage.getItem('reservations') || '[]');
+    
+    // Agregar nueva reserva
+    reservations.push(reservation);
+    
+    // Guardar en localStorage
+    localStorage.setItem('reservations', JSON.stringify(reservations));
+    
+    return reservation;
+}
+
+// Función para mostrar modal de confirmación
+function showConfirmationModal(reservation) {
+    console.log('Mostrando modal de confirmación:', reservation);
+    const modal = document.getElementById('confirmation-modal');
+    const modalLibrary = document.getElementById('modal-library');
+    const modalRoom = document.getElementById('modal-room');
+    const modalDate = document.getElementById('modal-date');
+    const modalTime = document.getElementById('modal-time');
+    
+    if (modalLibrary) modalLibrary.textContent = `Biblioteca ${reservation.library}`;
+    if (modalRoom) modalRoom.textContent = reservation.room;
+    if (modalDate) {
+        const date = new Date(reservation.date);
+        modalDate.textContent = `${date.getDate()} de ${monthNames[date.getMonth()]} de ${date.getFullYear()}`;
+    }
+    if (modalTime) modalTime.textContent = reservation.time;
+    
+    if (modal) {
+        modal.classList.remove('hidden');
+        console.log('Modal mostrado');
+    } else {
+        console.error('Modal no encontrado');
+    }
+}
+
+// Función para confirmar reserva
+function confirmReservation() {
+    console.log('Función confirmReservation llamada');
+    console.log('Estado actual:', reservationState);
+    
+    if (!reservationState.time) {
+        alert('Por favor selecciona un horario');
+        return;
+    }
+    
+    const confirmation = confirm(
+        `¿Confirmar reserva?\n\n` +
+        `Biblioteca: ${reservationState.library}\n` +
+        `Sala: ${reservationState.room}\n` +
+        `Fecha: ${reservationState.date.getDate()} de ${monthNames[reservationState.date.getMonth()]} de ${reservationState.date.getFullYear()}\n` +
+        `Hora: ${reservationState.time}`
+    );
+    
+    if (confirmation) {
+        console.log('Usuario confirmó la reserva');
+        const reservation = saveReservation();
+        console.log('Reserva guardada:', reservation);
+        showConfirmationModal(reservation);
+    } else {
+        console.log('Usuario canceló la reserva');
+    }
+}
+
+// Agregar event listener al botón de confirmar
+const confirmBtn = document.getElementById('confirm-reservation-btn');
+console.log('Botón de confirmar encontrado:', confirmBtn);
+if (confirmBtn) {
+    confirmBtn.addEventListener('click', confirmReservation);
+    console.log('Event listener agregado al botón de confirmar');
+} else {
+    console.error('Botón de confirmar no encontrado');
+}
+
+// Event listeners para el modal
+const closeModalBtn = document.getElementById('close-modal');
+const viewReservationsBtn = document.getElementById('view-reservations');
+const confirmationModal = document.getElementById('confirmation-modal');
+
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', () => {
+        confirmationModal.classList.add('hidden');
+    });
+}
+
+if (viewReservationsBtn) {
+    viewReservationsBtn.addEventListener('click', () => {
+        window.location.href = 'mis-reservas.html';
+    });
+}
+
+// Cerrar modal al hacer clic fuera de él
+if (confirmationModal) {
+    confirmationModal.addEventListener('click', (e) => {
+        if (e.target === confirmationModal) {
+            confirmationModal.classList.add('hidden');
+        }
+    });
+}
+
+// Inicializar
+updateSummary();
+updateCalendar();
+</script>
+
 </body></html>

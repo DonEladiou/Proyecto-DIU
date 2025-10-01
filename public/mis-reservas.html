@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Mis Reservas - BibliotecaUSM</title>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Newsreader:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1193d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+    <div class="flex flex-col min-h-screen">
+        <header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center gap-8">
+                        <div class="flex items-center gap-2 text-slate-900 dark:text-white">
+                            <span class="material-symbols-outlined text-primary text-3xl">import_contacts</span>
+                            <h1 class="text-xl font-bold">BibliotecaUSM</h1>
+                        </div>
+                        <nav class="hidden md:flex items-center gap-6">
+                            <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Inicio</a>
+                            <a class="text-sm font-medium hover:text-primary transition-colors" href="busqueda.html">Explorar</a>
+                            <a class="text-sm font-medium text-primary font-semibold" href="#">Mis Reservas</a>
+                        </nav>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button class="relative rounded-full p-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                            <span class="material-symbols-outlined">notifications</span>
+                        </button>
+                        <button class="md:hidden">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex items-center justify-between mb-8">
+                        <div>
+                            <h1 class="text-3xl font-bold text-slate-900 dark:text-white mb-2">Mis Reservas</h1>
+                            <p class="text-slate-600 dark:text-slate-400">Gestiona tus reservas de salas de estudio</p>
+                        </div>
+                        <a href="reservas.html" class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2">
+                            <span class="material-symbols-outlined">add</span>
+                            Nueva Reserva
+                        </a>
+                    </div>
+
+                    <!-- Filtros -->
+                    <div class="mb-6">
+                        <div class="flex flex-wrap gap-2">
+                            <button id="filter-all" class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-primary text-white">Todas</button>
+                            <button id="filter-active" class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">Activas</button>
+                            <button id="filter-cancelled" class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">Canceladas</button>
+                        </div>
+                    </div>
+
+                    <!-- Lista de reservas -->
+                    <div id="reservations-list" class="space-y-4">
+                        <!-- Las reservas se cargarán dinámicamente aquí -->
+                    </div>
+
+                    <!-- Mensaje cuando no hay reservas -->
+                    <div id="no-reservations" class="text-center py-12 hidden">
+                        <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-slate-100 dark:bg-slate-800 mb-4">
+                            <span class="material-symbols-outlined text-slate-400 text-3xl">event_available</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">No tienes reservas</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">Haz tu primera reserva de sala de estudio</p>
+                        <a href="reservas.html" class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors inline-flex items-center gap-2">
+                            <span class="material-symbols-outlined">add</span>
+                            Hacer Reserva
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-slate-500 dark:text-slate-400">
+                <p>© 2024 BibliotecaUSM. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal de confirmación de cancelación -->
+    <div id="cancel-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-slate-800 rounded-xl p-8 max-w-md mx-4 shadow-2xl">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-100 dark:bg-red-900 mb-4">
+                    <span class="material-symbols-outlined text-red-600 dark:text-red-400 text-3xl">warning</span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">¿Cancelar Reserva?</h3>
+                <p class="text-slate-600 dark:text-slate-400 mb-6">Esta acción no se puede deshacer. La reserva será eliminada permanentemente.</p>
+                <div class="flex gap-3">
+                    <button id="confirm-cancel" class="flex-1 bg-red-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-red-700 transition-colors">
+                        Sí, Cancelar
+                    </button>
+                    <button id="cancel-cancel" class="flex-1 bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300 font-bold py-3 px-4 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
+                        No, Mantener
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Estado de la aplicación
+        let reservations = [];
+        let currentFilter = 'all';
+        let reservationToCancel = null;
+
+        // Nombres de meses en español
+        const monthNames = [
+            'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+        ];
+
+        // Elementos del DOM
+        const reservationsList = document.getElementById('reservations-list');
+        const noReservations = document.getElementById('no-reservations');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const cancelModal = document.getElementById('cancel-modal');
+        const confirmCancelBtn = document.getElementById('confirm-cancel');
+        const cancelCancelBtn = document.getElementById('cancel-cancel');
+
+        // Función para cargar reservas desde localStorage
+        function loadReservations() {
+            const stored = localStorage.getItem('reservations');
+            reservations = stored ? JSON.parse(stored) : [];
+            renderReservations();
+        }
+
+        // Función para formatear fecha
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return `${date.getDate()} de ${monthNames[date.getMonth()]} de ${date.getFullYear()}`;
+        }
+
+        // Función para obtener el estado de una reserva
+        function getReservationStatus(reservation) {
+            const now = new Date();
+            const reservationDate = new Date(reservation.date);
+            
+            if (reservation.status === 'cancelada') {
+                return 'cancelada';
+            }
+            
+            if (reservationDate < now) {
+                return 'pasada';
+            }
+            
+            return 'activa';
+        }
+
+        // Función para renderizar una reserva
+        function renderReservation(reservation) {
+            const status = getReservationStatus(reservation);
+            const statusColors = {
+                'activa': 'bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200',
+                'pasada': 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400',
+                'cancelada': 'bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200'
+            };
+            
+            const statusTexts = {
+                'activa': 'Activa',
+                'pasada': 'Pasada',
+                'cancelada': 'Cancelada'
+            };
+
+            return `
+                <div class="reservation-card bg-white dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg transition-shadow" data-id="${reservation.id}">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">${reservation.room}</h3>
+                            <p class="text-slate-600 dark:text-slate-400">Biblioteca ${reservation.library}</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-sm font-medium ${statusColors[status]}">
+                            ${statusTexts[status]}
+                        </span>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Fecha</p>
+                            <p class="font-medium text-slate-900 dark:text-white">${formatDate(reservation.date)}</p>
+                        </div>
+                        <div>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Hora</p>
+                            <p class="font-medium text-slate-900 dark:text-white">${reservation.time}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                        <p class="text-sm text-slate-500 dark:text-slate-400">
+                            Reservada el ${formatDate(reservation.createdAt)}
+                        </p>
+                        ${status === 'activa' ? `
+                            <button class="cancel-btn bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors text-sm font-medium" data-id="${reservation.id}">
+                                Cancelar
+                            </button>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Función para renderizar todas las reservas
+        function renderReservations() {
+            let filteredReservations = reservations;
+
+            // Aplicar filtro
+            if (currentFilter === 'active') {
+                filteredReservations = reservations.filter(r => getReservationStatus(r) === 'activa');
+            } else if (currentFilter === 'cancelled') {
+                filteredReservations = reservations.filter(r => getReservationStatus(r) === 'cancelada');
+            }
+
+            if (filteredReservations.length === 0) {
+                reservationsList.innerHTML = '';
+                noReservations.classList.remove('hidden');
+            } else {
+                reservationsList.innerHTML = filteredReservations.map(renderReservation).join('');
+                noReservations.classList.add('hidden');
+                
+                // Agregar event listeners a los botones de cancelar
+                document.querySelectorAll('.cancel-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        reservationToCancel = parseInt(e.target.dataset.id);
+                        cancelModal.classList.remove('hidden');
+                    });
+                });
+            }
+        }
+
+        // Función para cancelar reserva
+        function cancelReservation(reservationId) {
+            reservations = reservations.map(r => 
+                r.id === reservationId ? { ...r, status: 'cancelada' } : r
+            );
+            localStorage.setItem('reservations', JSON.stringify(reservations));
+            renderReservations();
+        }
+
+        // Event listeners para filtros
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Actualizar estado visual de botones
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white');
+                    b.classList.add('bg-slate-200', 'dark:bg-slate-800');
+                });
+                
+                btn.classList.remove('bg-slate-200', 'dark:bg-slate-800');
+                btn.classList.add('bg-primary', 'text-white');
+                
+                // Actualizar filtro
+                currentFilter = btn.id.replace('filter-', '');
+                renderReservations();
+            });
+        });
+
+        // Event listeners para el modal de cancelación
+        if (confirmCancelBtn) {
+            confirmCancelBtn.addEventListener('click', () => {
+                if (reservationToCancel) {
+                    cancelReservation(reservationToCancel);
+                    cancelModal.classList.add('hidden');
+                    reservationToCancel = null;
+                }
+            });
+        }
+
+        if (cancelCancelBtn) {
+            cancelCancelBtn.addEventListener('click', () => {
+                cancelModal.classList.add('hidden');
+                reservationToCancel = null;
+            });
+        }
+
+        // Cerrar modal al hacer clic fuera de él
+        if (cancelModal) {
+            cancelModal.addEventListener('click', (e) => {
+                if (e.target === cancelModal) {
+                    cancelModal.classList.add('hidden');
+                    reservationToCancel = null;
+                }
+            });
+        }
+
+        // Inicializar
+        loadReservations();
+    </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Resultados de Búsqueda - BibliotecaUSM</title>
+    <link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+    <link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Newsreader:wght@400;500;700;800&amp;family=Noto+Sans:wght@400;500;700;900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1193d4",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-200">
+    <div class="flex flex-col min-h-screen">
+        <header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center gap-8">
+                        <div class="flex items-center gap-2 text-slate-900 dark:text-white">
+                            <span class="material-symbols-outlined text-primary text-3xl">import_contacts</span>
+                            <h1 class="text-xl font-bold">BibliotecaUSM</h1>
+                        </div>
+                        <nav class="hidden md:flex items-center gap-6">
+                            <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Inicio</a>
+                            <a class="text-sm font-medium hover:text-primary transition-colors" href="busqueda.html">Explorar</a>
+                            <a class="text-sm font-medium hover:text-primary transition-colors" href="mis-reservas.html">Mis Reservas</a>
+                        </nav>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button class="relative rounded-full p-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                            <span class="material-symbols-outlined">notifications</span>
+                        </button>
+                        <button class="md:hidden">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <!-- Barra de búsqueda -->
+                <div class="max-w-2xl mx-auto mb-8">
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <span class="material-symbols-outlined text-slate-500">search</span>
+                        </div>
+                        <input id="search-input" class="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="Buscar libros por título, autor o tema" type="search"/>
+                    </div>
+                </div>
+
+                <!-- Filtros por categoría -->
+                <div class="max-w-4xl mx-auto mb-8">
+                    <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4">Filtrar por categoría</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-primary text-white" data-category="all">Todos</button>
+                        <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="matematicas">Matemáticas</button>
+                        <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="fisica">Física</button>
+                        <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="finanzas">Finanzas</button>
+                        <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="electronica">Electrónica</button>
+                        <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="programacion">Programación</button>
+                        <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="quimica">Química</button>
+                        <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="ingenieria">Ingeniería</button>
+                        <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="literatura">Literatura</button>
+                    </div>
+                </div>
+
+                <!-- Resultados -->
+                <div class="max-w-6xl mx-auto">
+                    <div id="results-count" class="text-sm text-slate-600 dark:text-slate-400 mb-6"></div>
+                    <div id="books-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                        <!-- Libros académicos -->
+                        <div class="book-card group" data-category="matematicas" data-title="cálculo diferencial" data-author="james stewart">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Cálculo Diferencial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Cálculo Diferencial</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">James Stewart</p>
+                            <span class="text-xs text-primary font-medium">Matemáticas</span>
+                        </div>
+
+                        <div class="book-card group" data-category="fisica" data-title="física universitaria" data-author="hugh young">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Física Universitaria" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Física Universitaria</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Hugh Young</p>
+                            <span class="text-xs text-primary font-medium">Física</span>
+                        </div>
+
+                        <div class="book-card group" data-category="finanzas" data-title="finanzas corporativas" data-author="ross westerfield">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Finanzas Corporativas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Finanzas Corporativas</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Ross & Westerfield</p>
+                            <span class="text-xs text-primary font-medium">Finanzas</span>
+                        </div>
+
+                        <div class="book-card group" data-category="electronica" data-title="circuitos electrónicos" data-author="robert boylestad">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Circuitos Electrónicos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Circuitos Electrónicos</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Robert Boylestad</p>
+                            <span class="text-xs text-primary font-medium">Electrónica</span>
+                        </div>
+
+                        <div class="book-card group" data-category="programacion" data-title="introducción a algoritmos" data-author="thomas cormen">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Introducción a Algoritmos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Introducción a Algoritmos</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Thomas Cormen</p>
+                            <span class="text-xs text-primary font-medium">Programación</span>
+                        </div>
+
+                        <div class="book-card group" data-category="quimica" data-title="química general" data-author="raymond chang">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Química General" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Química General</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Raymond Chang</p>
+                            <span class="text-xs text-primary font-medium">Química</span>
+                        </div>
+
+                        <div class="book-card group" data-category="ingenieria" data-title="mecánica de materiales" data-author="russell hibbeler">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Mecánica de Materiales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Mecánica de Materiales</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Russell Hibbeler</p>
+                            <span class="text-xs text-primary font-medium">Ingeniería</span>
+                        </div>
+
+                        <div class="book-card group" data-category="matematicas" data-title="álgebra lineal" data-author="david lay">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Álgebra Lineal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Álgebra Lineal</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">David Lay</p>
+                            <span class="text-xs text-primary font-medium">Matemáticas</span>
+                        </div>
+
+                        <div class="book-card group" data-category="programacion" data-title="estructuras de datos" data-author="mark allen weiss">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Estructuras de Datos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Estructuras de Datos</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Mark Allen Weiss</p>
+                            <span class="text-xs text-primary font-medium">Programación</span>
+                        </div>
+
+                        <div class="book-card group" data-category="finanzas" data-title="análisis financiero" data-author="stephen ross">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Análisis Financiero" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Análisis Financiero</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Stephen Ross</p>
+                            <span class="text-xs text-primary font-medium">Finanzas</span>
+                        </div>
+
+                        <div class="book-card group" data-category="electronica" data-title="microelectrónica" data-author="adrian sedra">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Microelectrónica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Microelectrónica</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Adrian Sedra</p>
+                            <span class="text-xs text-primary font-medium">Electrónica</span>
+                        </div>
+
+                        <div class="book-card group" data-category="literatura" data-title="cien años de soledad" data-author="gabriel garcía márquez">
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Cien Años de Soledad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Cien Años de Soledad</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Gabriel García Márquez</p>
+                            <span class="text-xs text-primary font-medium">Literatura</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-slate-100 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-slate-500 dark:text-slate-400">
+                <p>© 2024 BibliotecaUSM. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Obtener parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchQuery = urlParams.get('q') || '';
+        
+        // Elementos del DOM
+        const searchInput = document.getElementById('search-input');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const bookCards = document.querySelectorAll('.book-card');
+        const resultsCount = document.getElementById('results-count');
+        
+        // Estado actual
+        let currentCategory = 'all';
+        let currentSearch = searchQuery;
+        
+        // Inicializar
+        if (searchInput) {
+            searchInput.value = searchQuery;
+        }
+        
+        // Función para filtrar libros
+        function filterBooks() {
+            let visibleCount = 0;
+            
+            bookCards.forEach(card => {
+                const title = card.dataset.title.toLowerCase();
+                const author = card.dataset.author.toLowerCase();
+                const category = card.dataset.category;
+                
+                const matchesSearch = !currentSearch || 
+                    title.includes(currentSearch.toLowerCase()) || 
+                    author.includes(currentSearch.toLowerCase());
+                
+                const matchesCategory = currentCategory === 'all' || category === currentCategory;
+                
+                const isVisible = matchesSearch && matchesCategory;
+                
+                card.style.display = isVisible ? 'block' : 'none';
+                
+                if (isVisible) visibleCount++;
+            });
+            
+            // Actualizar contador
+            if (resultsCount) {
+                resultsCount.textContent = `${visibleCount} libro${visibleCount !== 1 ? 's' : ''} encontrado${visibleCount !== 1 ? 's' : ''}`;
+            }
+        }
+        
+        // Event listeners
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                currentSearch = e.target.value;
+                filterBooks();
+            });
+        }
+        
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Actualizar estado visual de botones
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white');
+                    b.classList.add('bg-slate-200', 'dark:bg-slate-800');
+                });
+                
+                btn.classList.remove('bg-slate-200', 'dark:bg-slate-800');
+                btn.classList.add('bg-primary', 'text-white');
+                
+                // Actualizar categoría
+                currentCategory = btn.dataset.category;
+                filterBooks();
+            });
+        });
+        
+        // Filtrar inicialmente
+        filterBooks();
+    </script>
+</body>
+</html>

@@ -41,11 +41,11 @@
 <span class="material-symbols-outlined text-primary text-3xl">import_contacts</span>
 <h1 class="text-xl font-bold">BibliotecaUSM</h1>
 </div>
-<nav class="hidden md:flex items-center gap-6">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Inicio</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Explorar</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Mis Reserva</a>
-</nav>
+                        <nav class="hidden md:flex items-center gap-6">
+                            <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html">Inicio</a>
+                            <a class="text-sm font-medium hover:text-primary transition-colors" href="busqueda.html">Explorar</a>
+                            <a class="text-sm font-medium hover:text-primary transition-colors" href="mis-reservas.html">Mis Reservas</a>
+                        </nav>
 </div>
 <div class="flex items-center gap-4">
 <button class="relative rounded-full p-2 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
@@ -69,7 +69,7 @@
 <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
 <span class="material-symbols-outlined text-slate-500">search</span>
 </div>
-<input class="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="Buscar libros por título, autor o tema" type="search"/>
+<input id="search-books" class="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="Buscar libros por título, autor o tema" type="search"/>
 </div>
 <div class="flex justify-center flex-wrap gap-2 mt-4">
 <button class="px-4 py-1.5 text-sm font-medium rounded-full bg-primary text-white">Todos</button>
@@ -82,7 +82,7 @@
 <section class="mb-16">
 <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Nuevos Lanzamientos</h3>
 <div class="relative">
-<div class="flex overflow-x-auto gap-6 pb-4 -mx-4 px-4 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<div id="books-list" class="flex overflow-x-auto gap-6 pb-4 -mx-4 px-4 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
 <div class="flex-shrink-0 w-48 group">
 <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
 <img alt="Book cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkr4qJ4EwQKUv9IIe6fY6OuUGXU7SAJCXkMWZWwIT2VCAAlfQyq0ejwoSJJfGgmjhZVJo4tb50DNALi9PA-_PSHQWW-CzTwotJR8I7m5UufS6IKgnEPNleghz8JmcmHaAy0hjaITO1PMNXyD_MUwKz99v1tbEOrttQxzEVJLJSYExfH8YZGhQP4IvfSrckQXt_182jm9p_2oVFA1ERmKeLtjYNmZ9Dd1f_FApl8XXVhXjXP8ApL7nTNkUMcdm3VYn4H9zePTROuNY"/>
@@ -125,11 +125,11 @@
 <div class="text-center md:text-left">
     <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Reserva una sala de estudio</h3>
     <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-md mx-auto md:mx-0">¿Necesitas un lugar tranquilo para concentrarte? Reserva una de nuestras salas de estudio individuales o grupales.</p>
-    <a href="/reservas"
-       class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2 mx-auto md:mx-0">
+    <button onclick="window.location.href='/reservas'"
+            class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2 mx-auto md:mx-0">
         <span class="material-symbols-outlined">meeting_room</span>
         Reservar ahora
-    </a>
+    </button>
 </div>
 <div class="text-center md:text-left">
 <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Explora nuestros servicios</h3>
@@ -149,5 +149,27 @@
 </div>
 </footer>
 </div>
+
+<script>
+const searchInput = document.getElementById('search-books');
+if (searchInput) {
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const query = searchInput.value.trim();
+            if (query) {
+                window.location.href = `busqueda.html?q=${encodeURIComponent(query)}`;
+            }
+        }
+    });
+    
+    // También permitir búsqueda al hacer clic fuera del input
+    searchInput.addEventListener('blur', () => {
+        const query = searchInput.value.trim();
+        if (query) {
+            window.location.href = `busqueda.html?q=${encodeURIComponent(query)}`;
+        }
+    });
+}
+</script>
 
 </body></html>
