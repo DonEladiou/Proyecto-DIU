@@ -87,7 +87,7 @@ person
 <p class="font-bold">Biblioteca Casa Central</p>
 <p class="text-sm text-subtle-light dark:text-subtle-dark">08:15 – 19:45</p>
 </div>
-<button class="library-btn bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">Seleccionar</button>
+<button class="library-btn bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors text-sm">✓ Seleccionada</button>
 </div>
 <div class="p-4 rounded-lg border border-border-light dark:border-border-dark flex justify-between items-center library-option" data-library="Sede Viña del Mar">
 <div>
@@ -132,7 +132,7 @@ person
 <span class="material-symbols-outlined">chevron_right</span>
 </button>
 </div>
-<div class="grid grid-cols-7 gap-1 text-center text-sm">
+<div id="calendar-grid" class="grid grid-cols-7 gap-1 text-center text-sm">
 <div class="font-bold text-subtle-light dark:text-subtle-dark">D</div>
 <div class="font-bold text-subtle-light dark:text-subtle-dark">L</div>
 <div class="font-bold text-subtle-light dark:text-subtle-dark">M</div>
@@ -140,38 +140,7 @@ person
 <div class="font-bold text-subtle-light dark:text-subtle-dark">J</div>
 <div class="font-bold text-subtle-light dark:text-subtle-dark">V</div>
 <div class="font-bold text-subtle-light dark:text-subtle-dark">S</div>
-<div class="col-start-2"></div>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">1</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">2</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">3</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">4</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary text-white">5</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">6</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">7</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">8</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">9</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">10</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">11</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">12</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">13</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">14</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">15</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">16</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">17</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">18</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">19</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">20</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">21</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">22</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">23</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">24</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">25</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">26</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">27</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">28</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">29</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">30</button>
-<button class="h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20">31</button>
+<!-- Los días se generarán dinámicamente aquí -->
 </div>
 </div>
 <div class="space-y-4">
@@ -184,6 +153,7 @@ person
 <option value="16:00 - 18:00">16:00 - 18:00</option>
 <option value="18:00 - 20:00">18:00 - 20:00</option>
 </select>
+<div id="availability-indicator" class="mt-2 text-sm"></div>
 </div>
 </div>
 </div>
@@ -192,15 +162,11 @@ person
 <div class="flex flex-wrap gap-3">
 <label class="cursor-pointer">
 <input checked="" class="peer sr-only" name="room" type="radio"/>
-<div class="px-4 py-2 rounded-full border border-border-light dark:border-border-dark peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary">Sala de lectura principal</div>
+<div class="px-4 py-2 rounded-full border border-border-light dark:border-border-dark peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary">Sala individual</div>
 </label>
 <label class="cursor-pointer">
 <input class="peer sr-only" name="room" type="radio"/>
-<div class="px-4 py-2 rounded-full border border-border-light dark:border-border-dark peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary">Sala de estudio grupal</div>
-</label>
-<label class="cursor-pointer">
-<input class="peer sr-only" name="room" type="radio"/>
-<div class="px-4 py-2 rounded-full border border-border-light dark:border-border-dark peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary">Sala de reuniones pequeña</div>
+<div class="px-4 py-2 rounded-full border border-border-light dark:border-border-dark peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary">Sala grupal</div>
 </label>
 </div>
 </div>
@@ -213,7 +179,7 @@ person
 </div>
 <div class="grid grid-cols-3 gap-4 p-4 border-b border-border-light dark:border-border-dark">
 <p class="col-span-1 text-subtle-light dark:text-subtle-dark">Sala</p>
-<p id="summary-room" class="col-span-2 font-medium">Sala de lectura principal</p>
+<p id="summary-room" class="col-span-2 font-medium">Sala individual</p>
 </div>
 <div class="grid grid-cols-3 gap-4 p-4 border-b border-border-light dark:border-border-dark">
 <p class="col-span-1 text-subtle-light dark:text-subtle-dark">Fecha</p>
@@ -271,8 +237,8 @@ person
 // Estado de la reserva
 let reservationState = {
     library: 'Casa Central',
-    room: 'Sala de lectura principal',
-    date: new Date(2024, 6, 5), // 5 de julio de 2024
+    room: 'Sala individual',
+    date: new Date(), // Fecha actual
     time: ''
 };
 
@@ -296,6 +262,70 @@ const monthNames = [
     'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
 ];
 
+// Gestión de disponibilidad local
+let occupiedSlots = JSON.parse(localStorage.getItem('occupiedSlots') || '{}');
+
+function getDateKey(dateObj) {
+    const y = dateObj.getFullYear();
+    const m = String(dateObj.getMonth() + 1).padStart(2, '0');
+    const d = String(dateObj.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
+}
+
+function getSlotKey(library, room, dateObj, time) {
+    const dateKey = getDateKey(dateObj);
+    return `${library}|${room}|${dateKey}|${time}`;
+}
+
+function isSlotAvailable(library, room, dateObj, time) {
+    if (!time) return false;
+    const key = getSlotKey(library, room, dateObj, time);
+    return occupiedSlots[key] !== true;
+}
+
+function markSlotOccupied(library, room, dateObj, time) {
+    const key = getSlotKey(library, room, dateObj, time);
+    occupiedSlots[key] = true;
+    localStorage.setItem('occupiedSlots', JSON.stringify(occupiedSlots));
+}
+
+function updateAvailabilityIndicator() {
+    const indicator = document.getElementById('availability-indicator');
+    if (!indicator) return;
+    if (!reservationState.time) {
+        indicator.textContent = '';
+        indicator.className = 'mt-2 text-sm';
+        return;
+    }
+    const available = isSlotAvailable(reservationState.library, reservationState.room, reservationState.date, reservationState.time);
+    indicator.textContent = available ? 'Disponible' : 'No disponible';
+    indicator.className = available
+        ? 'mt-2 text-sm text-green-700 dark:text-green-300'
+        : 'mt-2 text-sm text-red-700 dark:text-red-300';
+}
+
+function updateTimeSelectorAvailability() {
+    const timeSelector = document.getElementById('time-selector');
+    if (!timeSelector) return;
+    
+    const options = timeSelector.querySelectorAll('option');
+    options.forEach(option => {
+        if (option.value === '') return; // Mantener la opción por defecto
+        
+        const isAvailable = isSlotAvailable(reservationState.library, reservationState.room, reservationState.date, option.value);
+        
+        if (isAvailable) {
+            option.disabled = false;
+            option.style.color = '';
+            option.style.opacity = '';
+        } else {
+            option.disabled = true;
+            option.style.color = '#9ca3af';
+            option.style.opacity = '0.5';
+        }
+    });
+}
+
 // Función para actualizar el resumen
 function updateSummary() {
     if (summaryLibrary) summaryLibrary.textContent = `Biblioteca ${reservationState.library}`;
@@ -313,13 +343,67 @@ function updateSummary() {
 function updateCalendar() {
     const year = reservationState.date.getFullYear();
     const month = reservationState.date.getMonth();
+    const selectedDay = reservationState.date.getDate();
     
     if (currentMonthEl) {
         currentMonthEl.textContent = `${monthNames[month]} ${year}`;
     }
     
-    // Aquí podrías regenerar los días del calendario dinámicamente
-    // Por simplicidad, mantenemos el calendario estático pero funcional
+    // Obtener el contenedor del calendario
+    const calendarGrid = document.getElementById('calendar-grid');
+    if (!calendarGrid) return;
+    
+    // Limpiar días anteriores (mantener los encabezados)
+    const dayButtons = calendarGrid.querySelectorAll('button, .empty-day');
+    dayButtons.forEach(btn => btn.remove());
+    
+    // Calcular el primer día del mes y cuántos días tiene
+    const firstDay = new Date(year, month, 1);
+    const lastDay = new Date(year, month + 1, 0);
+    const daysInMonth = lastDay.getDate();
+    
+    // Obtener qué día de la semana es el primer día (0 = domingo, 1 = lunes, etc.)
+    let startingDayOfWeek = firstDay.getDay();
+    
+    // Agregar días vacíos al inicio si es necesario
+    for (let i = 0; i < startingDayOfWeek; i++) {
+        const emptyDay = document.createElement('div');
+        emptyDay.className = 'empty-day';
+        calendarGrid.appendChild(emptyDay);
+    }
+    
+    // Generar los días del mes
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayButton = document.createElement('button');
+        dayButton.className = 'h-10 w-10 flex items-center justify-center rounded-full hover:bg-primary/10 dark:hover:bg-primary/20 transition-colors';
+        dayButton.textContent = day;
+        
+        // Marcar el día seleccionado
+        if (day === selectedDay) {
+            dayButton.classList.remove('hover:bg-primary/10', 'dark:hover:bg-primary/20');
+            dayButton.classList.add('bg-primary', 'text-white');
+        }
+        
+        // Agregar event listener para selección de día
+        dayButton.addEventListener('click', () => {
+            // Actualizar la fecha en el estado
+            reservationState.date.setDate(day);
+            updateSummary();
+            updateAvailabilityIndicator();
+            updateTimeSelectorAvailability();
+            
+            // Actualizar visualmente el día seleccionado
+            calendarGrid.querySelectorAll('button').forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-white');
+                btn.classList.add('hover:bg-primary/10', 'dark:hover:bg-primary/20');
+            });
+            
+            dayButton.classList.remove('hover:bg-primary/10', 'dark:hover:bg-primary/20');
+            dayButton.classList.add('bg-primary', 'text-white');
+        });
+        
+        calendarGrid.appendChild(dayButton);
+    }
 }
 
 // Event listeners para selección de biblioteca
@@ -329,17 +413,21 @@ libraryButtons.forEach((btn, index) => {
         libraryButtons.forEach(b => {
             b.classList.remove('bg-primary', 'text-white');
             b.classList.add('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
+            b.textContent = 'Seleccionar';
         });
         
         // Activar el botón seleccionado
         btn.classList.remove('bg-slate-200', 'dark:bg-slate-800', 'text-slate-700', 'dark:text-slate-300');
         btn.classList.add('bg-primary', 'text-white');
+        btn.textContent = '✓ Seleccionada';
         
         // Actualizar estado
         const libraryOption = btn.closest('.library-option');
         if (libraryOption) {
             reservationState.library = libraryOption.dataset.library;
             updateSummary();
+            updateAvailabilityIndicator();
+            updateTimeSelectorAvailability();
         }
     });
 });
@@ -352,6 +440,8 @@ roomInputs.forEach(input => {
             if (label) {
                 reservationState.room = label.textContent.trim();
                 updateSummary();
+                updateAvailabilityIndicator();
+                updateTimeSelectorAvailability();
             }
         }
     });
@@ -362,6 +452,7 @@ if (timeSelector) {
     timeSelector.addEventListener('change', () => {
         reservationState.time = timeSelector.value;
         updateSummary();
+        updateAvailabilityIndicator();
     });
 }
 
@@ -382,26 +473,7 @@ if (nextMonthBtn) {
     });
 }
 
-// Event listener para días del calendario
-document.querySelectorAll('.grid button').forEach(btn => {
-    if (btn.textContent && !isNaN(btn.textContent)) {
-        btn.addEventListener('click', () => {
-            const day = parseInt(btn.textContent);
-            reservationState.date.setDate(day);
-            updateSummary();
-            
-            // Actualizar visualmente el día seleccionado
-            document.querySelectorAll('.grid button').forEach(b => {
-                if (b.textContent && !isNaN(b.textContent)) {
-                    b.classList.remove('bg-primary', 'text-white');
-                    b.classList.add('hover:bg-primary/10', 'dark:hover:bg-primary/20');
-                }
-            });
-            btn.classList.remove('hover:bg-primary/10', 'dark:hover:bg-primary/20');
-            btn.classList.add('bg-primary', 'text-white');
-        });
-    }
-});
+// Los event listeners para días del calendario ahora se manejan dinámicamente en updateCalendar()
 
 // Función para guardar reserva en localStorage
 function saveReservation() {
@@ -472,8 +544,15 @@ function confirmReservation() {
     
     if (confirmation) {
         console.log('Usuario confirmó la reserva');
+        // Validar disponibilidad antes de guardar
+        if (!isSlotAvailable(reservationState.library, reservationState.room, reservationState.date, reservationState.time)) {
+            alert('La franja seleccionada ya no está disponible. Por favor, elige otra.');
+            return;
+        }
         const reservation = saveReservation();
         console.log('Reserva guardada:', reservation);
+        // Marcar franja como ocupada
+        markSlotOccupied(reservationState.library, reservationState.room, reservationState.date, reservationState.time);
         showConfirmationModal(reservation);
     } else {
         console.log('Usuario canceló la reserva');
@@ -519,6 +598,8 @@ if (confirmationModal) {
 // Inicializar
 updateSummary();
 updateCalendar();
+updateAvailabilityIndicator();
+updateTimeSelectorAvailability();
 </script>
 
 </body></html>

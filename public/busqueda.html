@@ -72,10 +72,10 @@
                     </div>
                 </div>
 
-                <!-- Filtros por categoría -->
+                <!-- Filtros por categoría y autor -->
                 <div class="max-w-4xl mx-auto mb-8">
                     <h3 class="text-lg font-semibold text-slate-900 dark:text-white mb-4">Filtrar por categoría</h3>
-                    <div class="flex flex-wrap gap-2">
+                    <div class="flex flex-wrap gap-2 mb-4">
                         <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-primary text-white" data-category="all">Todos</button>
                         <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="matematicas">Matemáticas</button>
                         <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="fisica">Física</button>
@@ -86,6 +86,10 @@
                         <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="ingenieria">Ingeniería</button>
                         <button class="filter-btn px-4 py-2 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="literatura">Literatura</button>
                     </div>
+                    <div class="max-w-2xl">
+                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2" for="isbn-filter">Buscar por ISBN</label>
+                        <input id="isbn-filter" class="w-full h-12 px-4 rounded-lg border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-primary" type="text" placeholder="Escribe un ISBN (ej: 978-0-123456-78-9)" />
+                    </div>
                 </div>
 
                 <!-- Resultados -->
@@ -93,7 +97,7 @@
                     <div id="results-count" class="text-sm text-slate-600 dark:text-slate-400 mb-6"></div>
                     <div id="books-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                         <!-- Libros académicos -->
-                        <div class="book-card group" data-category="matematicas" data-title="cálculo diferencial" data-author="james stewart">
+                        <div class="book-card group" data-category="matematicas" data-title="cálculo diferencial" data-author="james stewart" data-isbn="978-0-495-01166-0" data-availability='{"Casa Central": 3, "Sede Viña del Mar": 2, "Sede Concepción": 1, "Campus Vitacura": 4, "Campus San Joaquín": 2}'>
                             <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
                                 <img alt="Cálculo Diferencial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop"/>
                             </div>
@@ -102,7 +106,7 @@
                             <span class="text-xs text-primary font-medium">Matemáticas</span>
                         </div>
 
-                        <div class="book-card group" data-category="fisica" data-title="física universitaria" data-author="hugh young">
+                        <div class="book-card group" data-category="fisica" data-title="física universitaria" data-author="hugh young" data-isbn="978-0-321-50121-9" data-availability='{"Casa Central": 2, "Sede Viña del Mar": 3, "Sede Concepción": 2, "Campus Vitacura": 1, "Campus San Joaquín": 3}'>
                             <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
                                 <img alt="Física Universitaria" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=300&h=400&fit=crop"/>
                             </div>
@@ -111,7 +115,7 @@
                             <span class="text-xs text-primary font-medium">Física</span>
                         </div>
 
-                        <div class="book-card group" data-category="finanzas" data-title="finanzas corporativas" data-author="ross westerfield">
+                        <div class="book-card group" data-category="finanzas" data-title="finanzas corporativas" data-author="ross westerfield" data-isbn="978-0-07-803477-0" data-availability='{"Casa Central": 1, "Sede Viña del Mar": 2, "Sede Concepción": 1, "Campus Vitacura": 3, "Campus San Joaquín": 2}'>
                             <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
                                 <img alt="Finanzas Corporativas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=400&fit=crop"/>
                             </div>
@@ -120,7 +124,7 @@
                             <span class="text-xs text-primary font-medium">Finanzas</span>
                         </div>
 
-                        <div class="book-card group" data-category="electronica" data-title="circuitos electrónicos" data-author="robert boylestad">
+                        <div class="book-card group" data-category="electronica" data-title="circuitos electrónicos" data-author="robert boylestad" data-isbn="978-0-13-376003-3" data-availability='{"Casa Central": 4, "Sede Viña del Mar": 1, "Sede Concepción": 3, "Campus Vitacura": 2, "Campus San Joaquín": 1}'>
                             <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
                                 <img alt="Circuitos Electrónicos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=400&fit=crop"/>
                             </div>
@@ -129,7 +133,7 @@
                             <span class="text-xs text-primary font-medium">Electrónica</span>
                         </div>
 
-                        <div class="book-card group" data-category="programacion" data-title="introducción a algoritmos" data-author="thomas cormen">
+                        <div class="book-card group" data-category="programacion" data-title="introducción a algoritmos" data-author="thomas cormen" data-isbn="978-0-262-03384-8" data-availability='{"Casa Central": 5, "Sede Viña del Mar": 2, "Sede Concepción": 2, "Campus Vitacura": 3, "Campus San Joaquín": 4}'>
                             <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
                                 <img alt="Introducción a Algoritmos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=300&h=400&fit=crop"/>
                             </div>
@@ -138,7 +142,7 @@
                             <span class="text-xs text-primary font-medium">Programación</span>
                         </div>
 
-                        <div class="book-card group" data-category="quimica" data-title="química general" data-author="raymond chang">
+                        <div class="book-card group" data-category="quimica" data-title="química general" data-author="raymond chang" data-isbn="978-1-260-45649-8" data-availability='{"Casa Central": 2, "Sede Viña del Mar": 3, "Sede Concepción": 4, "Campus Vitacura": 1, "Campus San Joaquín": 2}'>
                             <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
                                 <img alt="Química General" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=300&h=400&fit=crop"/>
                             </div>
@@ -147,7 +151,7 @@
                             <span class="text-xs text-primary font-medium">Química</span>
                         </div>
 
-                        <div class="book-card group" data-category="ingenieria" data-title="mecánica de materiales" data-author="russell hibbeler">
+                        <div class="book-card group" data-category="ingenieria" data-title="mecánica de materiales" data-author="russell hibbeler" data-isbn="978-0-13-431965-0" data-availability='{"Casa Central": 3, "Sede Viña del Mar": 2, "Sede Concepción": 1, "Campus Vitacura": 4, "Campus San Joaquín": 3}'>
                             <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
                                 <img alt="Mecánica de Materiales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=400&fit=crop"/>
                             </div>
@@ -156,7 +160,7 @@
                             <span class="text-xs text-primary font-medium">Ingeniería</span>
                         </div>
 
-                        <div class="book-card group" data-category="matematicas" data-title="álgebra lineal" data-author="david lay">
+                        <div class="book-card group" data-category="matematicas" data-title="álgebra lineal" data-author="david lay" data-isbn="978-0-321-98289-1" data-availability='{"Casa Central": 4, "Sede Viña del Mar": 1, "Sede Concepción": 2, "Campus Vitacura": 3, "Campus San Joaquín": 2}'>
                             <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
                                 <img alt="Álgebra Lineal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=300&h=400&fit=crop"/>
                             </div>
@@ -165,7 +169,7 @@
                             <span class="text-xs text-primary font-medium">Matemáticas</span>
                         </div>
 
-                        <div class="book-card group" data-category="programacion" data-title="estructuras de datos" data-author="mark allen weiss">
+                        <div class="book-card group" data-category="programacion" data-title="estructuras de datos" data-author="mark allen weiss" data-isbn="978-0-13-284737-7" data-availability='{"Casa Central": 3, "Sede Viña del Mar": 2, "Sede Concepción": 3, "Campus Vitacura": 2, "Campus San Joaquín": 4}'>
                             <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
                                 <img alt="Estructuras de Datos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=300&h=400&fit=crop"/>
                             </div>
@@ -174,7 +178,7 @@
                             <span class="text-xs text-primary font-medium">Programación</span>
                         </div>
 
-                        <div class="book-card group" data-category="finanzas" data-title="análisis financiero" data-author="stephen ross">
+                        <div class="book-card group" data-category="finanzas" data-title="análisis financiero" data-author="stephen ross" data-isbn="978-0-07-803469-5" data-availability='{"Casa Central": 1, "Sede Viña del Mar": 3, "Sede Concepción": 1, "Campus Vitacura": 2, "Campus San Joaquín": 2}'>
                             <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
                                 <img alt="Análisis Financiero" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=300&h=400&fit=crop"/>
                             </div>
@@ -183,7 +187,7 @@
                             <span class="text-xs text-primary font-medium">Finanzas</span>
                         </div>
 
-                        <div class="book-card group" data-category="electronica" data-title="microelectrónica" data-author="adrian sedra">
+                        <div class="book-card group" data-category="electronica" data-title="microelectrónica" data-author="adrian sedra" data-isbn="978-0-19-933913-6" data-availability='{"Casa Central": 2, "Sede Viña del Mar": 1, "Sede Concepción": 3, "Campus Vitacura": 4, "Campus San Joaquín": 1}'>
                             <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
                                 <img alt="Microelectrónica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=300&h=400&fit=crop"/>
                             </div>
@@ -192,13 +196,87 @@
                             <span class="text-xs text-primary font-medium">Electrónica</span>
                         </div>
 
-                        <div class="book-card group" data-category="literatura" data-title="cien años de soledad" data-author="gabriel garcía márquez">
+                        <div class="book-card group" data-category="literatura" data-title="cien años de soledad" data-author="gabriel garcía márquez" data-isbn="978-0-06-112009-1" data-availability='{"Casa Central": 6, "Sede Viña del Mar": 4, "Sede Concepción": 3, "Campus Vitacura": 5, "Campus San Joaquín": 4}'>
                             <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
                                 <img alt="Cien Años de Soledad" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=400&fit=crop"/>
                             </div>
                             <h4 class="font-bold truncate text-slate-900 dark:text-white">Cien Años de Soledad</h4>
                             <p class="text-sm text-slate-500 dark:text-slate-400">Gabriel García Márquez</p>
                             <span class="text-xs text-primary font-medium">Literatura</span>
+                        </div>
+
+                        <!-- Libros de literatura (Nuevos Lanzamientos) -->
+                        <div class="book-card group" data-category="literatura" data-title="el reino perdido" data-author="elara blackwood" data-isbn="978-0-123456-78-9" data-availability='{"Casa Central": 2, "Sede Viña del Mar": 1, "Sede Concepción": 2, "Campus Vitacura": 3, "Campus San Joaquín": 1}'>
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="El Reino Perdido" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkr4qJ4EwQKUv9IIe6fY6OuUGXU7SAJCXkMWZWwIT2VCAAlfQyq0ejwoSJJfGgmjhZVJo4tb50DNALi9PA-_PSHQWW-CzTwotJR8I7m5UufS6IKgnEPNleghz8JmcmHaAy0hjaITO1PMNXyD_MUwKz99v1tbEOrttQxzEVJLJSYExfH8YZGhQP4IvfSrckQXt_182jm9p_2oVFA1ERmKeLtjYNmZ9Dd1f_FApl8XXVhXjXP8ApL7nTNkUMcdm3VYn4H9zePTROuNY"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">El Reino Perdido</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Elara Blackwood</p>
+                            <span class="text-xs text-primary font-medium">Literatura</span>
+                        </div>
+
+                        <div class="book-card group" data-category="literatura" data-title="sombras en la noche" data-author="julian thorne" data-isbn="978-0-123456-78-8" data-availability='{"Casa Central": 1, "Sede Viña del Mar": 2, "Sede Concepción": 1, "Campus Vitacura": 2, "Campus San Joaquín": 3}'>
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Sombras en la Noche" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPpQ1nENxY0cSH12lmeWgcAZYFCXZEnsybRrpJ_apCR3SWrGme90aiJ8nULPdYq4i-QG7RrYsqL3SNaZli5bc3JFo99gjJQWK8JLNOU_Dyu78ie-nMeL0CoID3fLwNGyKSaTOFiDLx6Ac_rGRXuFEtT9lcp7GCRoK4iwDfM5xWyMxuZYO6OyA5-Pg81VzrohI1aGVQS_AbZWUyZHWyikErBLNjC5zTatWe54UyCLsZDdJww4VpeEIlQlEHv_DM2zWvE_0EbProFUk"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Sombras en la Noche</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Julian Thorne</p>
+                            <span class="text-xs text-primary font-medium">Literatura</span>
+                        </div>
+
+                        <div class="book-card group" data-category="literatura" data-title="un amor inesperado" data-author="isabella rossi" data-isbn="978-0-123456-78-7" data-availability='{"Casa Central": 3, "Sede Viña del Mar": 2, "Sede Concepción": 2, "Campus Vitacura": 1, "Campus San Joaquín": 2}'>
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Un Amor Inesperado" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqgiKLF7cyn2LbRCssCpr215pbgK6TowhAioOOF43GqziJOkG0qRpg41W730V52Gq8N934mSyj0qNDklSXv2S7esiJUsqehkxPhJRKiyBQgtIY8IU_shh1GEZGj4Uiyjs-qlpn7xnWK1uMhJrP41ivodRqdi4z7xStp0sBNMnMKvfdLWzwynKhEgVoamPXhOVBSlTuI1e8EZ5zxLAKpE6E78869N41PfPip4ChvX7HLDASZYdjfY2AP6fuwqm92qzaNMOhqC5D84s"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Un Amor Inesperado</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Isabella Rossi</p>
+                            <span class="text-xs text-primary font-medium">Literatura</span>
+                        </div>
+
+                        <div class="book-card group" data-category="literatura" data-title="el secreto revelado" data-author="damien cole" data-isbn="978-0-123456-78-6" data-availability='{"Casa Central": 2, "Sede Viña del Mar": 1, "Sede Concepción": 3, "Campus Vitacura": 2, "Campus San Joaquín": 1}'>
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="El Secreto Revelado" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQkYc1G289mi5J3Vs07k9dOXdDGFEoAY2sepATdBEmGpyiUDMB44G8h8U1Simbw6wiB9i8mW6iaIkGwXgi3K0E4JEqZ_Yt7-ANOQNfsxVbc6KdNmMMZYQfqh1Ei917xQlwLh98Tkhu0y4CzSnD-bBlxsKfrYEfq-L9gVeNzES3oUoFN-oE-FNfx-NxJgUbarC8jbntVpe99dPQxW7Rj_47Rm15HtB9XGWqb7OaSrrxw69O7dUhtuBs3tbzZTe9K-Um4Aiyg0-yjVA"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">El Secreto Revelado</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Damien Cole</p>
+                            <span class="text-xs text-primary font-medium">Literatura</span>
+                        </div>
+
+                        <div class="book-card group" data-category="literatura" data-title="eco del pasado" data-author="clara beaumont" data-isbn="978-0-123456-78-5" data-availability='{"Casa Central": 1, "Sede Viña del Mar": 3, "Sede Concepción": 1, "Campus Vitacura": 2, "Campus San Joaquín": 2}'>
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Eco del Pasado" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFGUXw9zauOfco3uKU3ruIQJGdDk14LW_V7wG2a7tnhitIVctlGH9ysycXGUFvJEUFfGQMN-2RBAfp_VcmEMHAJXImDcjCqswNJZ8Mz-ohGYe0y3aj1BvKmblYHv-FswqG0K_zm36yl9s5a5B_P_Z7vS72fCF6GuA4nDIW6FU_HdJWIbkBHJNijP6NZImXyFuXn771Teje6Q24wy5nDHEptYZWV8JcZqmRStVJmyFn57KhkCflEfpaX-vcnO25Q-eSPgVquAjqJdE"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Eco del Pasado</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Clara Beaumont</p>
+                            <span class="text-xs text-primary font-medium">Literatura</span>
+                        </div>
+
+                        <!-- Libros académicos adicionales -->
+                        <div class="book-card group" data-category="matematicas" data-title="cálculo integral" data-author="james stewart" data-isbn="978-0-495-01167-7" data-availability='{"Casa Central": 2, "Sede Viña del Mar": 1, "Sede Concepción": 2, "Campus Vitacura": 3, "Campus San Joaquín": 1}'>
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Cálculo Integral" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1509228468518-180dd4864904?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Cálculo Integral</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">James Stewart</p>
+                            <span class="text-xs text-primary font-medium">Matemáticas</span>
+                        </div>
+
+                        <div class="book-card group" data-category="programacion" data-title="programación orientada a objetos" data-author="bertrand meyer" data-isbn="978-0-13-629155-4" data-availability='{"Casa Central": 3, "Sede Viña del Mar": 2, "Sede Concepción": 1, "Campus Vitacura": 4, "Campus San Joaquín": 2}'>
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Programación Orientada a Objetos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Programación Orientada a Objetos</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Bertrand Meyer</p>
+                            <span class="text-xs text-primary font-medium">Programación</span>
+                        </div>
+
+                        <div class="book-card group" data-category="ingenieria" data-title="termodinámica" data-author="yunus cengel" data-isbn="978-0-07-339817-4" data-availability='{"Casa Central": 2, "Sede Viña del Mar": 3, "Sede Concepción": 2, "Campus Vitacura": 1, "Campus San Joaquín": 3}'>
+                            <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
+                                <img alt="Termodinámica" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=400&fit=crop"/>
+                            </div>
+                            <h4 class="font-bold truncate text-slate-900 dark:text-white">Termodinámica</h4>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Yunus Cengel</p>
+                            <span class="text-xs text-primary font-medium">Ingeniería</span>
                         </div>
                     </div>
                 </div>
@@ -216,20 +294,45 @@
         // Obtener parámetros de la URL
         const urlParams = new URLSearchParams(window.location.search);
         const searchQuery = urlParams.get('q') || '';
+        const categoryParam = urlParams.get('category') || 'all';
         
         // Elementos del DOM
         const searchInput = document.getElementById('search-input');
         const filterButtons = document.querySelectorAll('.filter-btn');
         const bookCards = document.querySelectorAll('.book-card');
         const resultsCount = document.getElementById('results-count');
+        const isbnFilterInput = document.getElementById('isbn-filter');
         
         // Estado actual
-        let currentCategory = 'all';
+        let currentCategory = categoryParam;
         let currentSearch = searchQuery;
+        let currentIsbn = '';
         
         // Inicializar
         if (searchInput) {
             searchInput.value = searchQuery;
+        }
+        
+        // Inicializar botón de categoría seleccionado
+        function initializeCategoryButton() {
+            filterButtons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-white');
+                btn.classList.add('bg-slate-200', 'dark:bg-slate-800');
+                
+                if (btn.dataset.category === currentCategory) {
+                    btn.classList.remove('bg-slate-200', 'dark:bg-slate-800');
+                    btn.classList.add('bg-primary', 'text-white');
+                }
+            });
+        }
+        
+        initializeCategoryButton();
+        
+        // Función para normalizar texto (remover acentos y convertir a minúsculas)
+        function normalizeText(text) {
+            return text.toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '');
         }
         
         // Función para filtrar libros
@@ -237,17 +340,23 @@
             let visibleCount = 0;
             
             bookCards.forEach(card => {
-                const title = card.dataset.title.toLowerCase();
-                const author = card.dataset.author.toLowerCase();
+                const title = normalizeText(card.dataset.title);
+                const author = normalizeText(card.dataset.author);
                 const category = card.dataset.category;
+                const categoryNormalized = normalizeText(category);
+                const isbn = card.dataset.isbn || '';
+                
+                const searchTerm = normalizeText(currentSearch);
                 
                 const matchesSearch = !currentSearch || 
-                    title.includes(currentSearch.toLowerCase()) || 
-                    author.includes(currentSearch.toLowerCase());
+                    title.includes(searchTerm) || 
+                    author.includes(searchTerm) ||
+                    categoryNormalized.includes(searchTerm);
+                const matchesIsbn = !currentIsbn || isbn.includes(currentIsbn);
                 
                 const matchesCategory = currentCategory === 'all' || category === currentCategory;
                 
-                const isVisible = matchesSearch && matchesCategory;
+                const isVisible = matchesSearch && matchesCategory && matchesIsbn;
                 
                 card.style.display = isVisible ? 'block' : 'none';
                 
@@ -264,6 +373,13 @@
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
                 currentSearch = e.target.value;
+                filterBooks();
+            });
+        }
+
+        if (isbnFilterInput) {
+            isbnFilterInput.addEventListener('input', (e) => {
+                currentIsbn = e.target.value;
                 filterBooks();
             });
         }

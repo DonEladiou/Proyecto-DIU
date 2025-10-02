@@ -72,51 +72,60 @@
 <input id="search-books" class="w-full h-14 pl-12 pr-4 rounded-xl border border-slate-300 dark:border-slate-700 bg-background-light dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-primary transition-all" placeholder="Buscar libros por título, autor o tema" type="search"/>
 </div>
 <div class="flex justify-center flex-wrap gap-2 mt-4">
-<button class="px-4 py-1.5 text-sm font-medium rounded-full bg-primary text-white">Todos</button>
-<button class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">Ficción</button>
-<button class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">No Ficción</button>
-<button class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">Ciencia Ficción</button>
-<button class="px-4 py-1.5 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors">Misterio</button>
+<button class="category-btn px-4 py-1.5 text-sm font-medium rounded-full bg-primary text-white" data-category="all">Todos</button>
+<button class="category-btn px-4 py-1.5 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="matematicas">Matemáticas</button>
+<button class="category-btn px-4 py-1.5 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="fisica">Física</button>
+<button class="category-btn px-4 py-1.5 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="finanzas">Finanzas</button>
+<button class="category-btn px-4 py-1.5 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="electronica">Electrónica</button>
+<button class="category-btn px-4 py-1.5 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="programacion">Programación</button>
+<button class="category-btn px-4 py-1.5 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="quimica">Química</button>
+<button class="category-btn px-4 py-1.5 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="ingenieria">Ingeniería</button>
+<button class="category-btn px-4 py-1.5 text-sm font-medium rounded-full bg-slate-200 dark:bg-slate-800 hover:bg-primary/20 dark:hover:bg-primary/30 transition-colors" data-category="literatura">Literatura</button>
 </div>
 </div>
 <section class="mb-16">
-<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Nuevos Lanzamientos</h3>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 text-center">Nuevos Lanzamientos</h3>
 <div class="relative">
-<div id="books-list" class="flex overflow-x-auto gap-6 pb-4 -mx-4 px-4 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
-<div class="flex-shrink-0 w-48 group">
+<div id="books-list" class="flex overflow-x-auto gap-6 pb-4 -mx-4 px-4 [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden justify-center">
+<div class="flex-shrink-0 w-48 group" data-category="literatura" data-title="el reino perdido" data-author="elara blackwood" data-isbn="978-0-123456-78-9">
 <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
 <img alt="Book cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkr4qJ4EwQKUv9IIe6fY6OuUGXU7SAJCXkMWZWwIT2VCAAlfQyq0ejwoSJJfGgmjhZVJo4tb50DNALi9PA-_PSHQWW-CzTwotJR8I7m5UufS6IKgnEPNleghz8JmcmHaAy0hjaITO1PMNXyD_MUwKz99v1tbEOrttQxzEVJLJSYExfH8YZGhQP4IvfSrckQXt_182jm9p_2oVFA1ERmKeLtjYNmZ9Dd1f_FApl8XXVhXjXP8ApL7nTNkUMcdm3VYn4H9zePTROuNY"/>
 </div>
 <h4 class="font-bold truncate text-slate-900 dark:text-white">El Reino Perdido</h4>
 <p class="text-sm text-slate-500 dark:text-slate-400">Elara Blackwood</p>
+<span class="text-xs text-primary font-medium">Literatura</span>
 </div>
-<div class="flex-shrink-0 w-48 group">
+<div class="flex-shrink-0 w-48 group" data-category="literatura" data-title="sombras en la noche" data-author="julian thorne" data-isbn="978-0-123456-78-8">
 <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
 <img alt="Book cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPpQ1nENxY0cSH12lmeWgcAZYFCXZEnsybRrpJ_apCR3SWrGme90aiJ8nULPdYq4i-QG7RrYsqL3SNaZli5bc3JFo99gjJQWK8JLNOU_Dyu78ie-nMeL0CoID3fLwNGyKSaTOFiDLx6Ac_rGRXuFEtT9lcp7GCRoK4iwDfM5xWyMxuZYO6OyA5-Pg81VzrohI1aGVQS_AbZWUyZHWyikErBLNjC5zTatWe54UyCLsZDdJww4VpeEIlQlEHv_DM2zWvE_0EbProFUk"/>
 </div>
 <h4 class="font-bold truncate text-slate-900 dark:text-white">Sombras en la Noche</h4>
 <p class="text-sm text-slate-500 dark:text-slate-400">Julian Thorne</p>
+<span class="text-xs text-primary font-medium">Literatura</span>
 </div>
-<div class="flex-shrink-0 w-48 group">
+<div class="flex-shrink-0 w-48 group" data-category="literatura" data-title="un amor inesperado" data-author="isabella rossi" data-isbn="978-0-123456-78-7">
 <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
 <img alt="Book cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqgiKLF7cyn2LbRCssCpr215pbgK6TowhAioOOF43GqziJOkG0qRpg41W730V52Gq8N934mSyj0qNDklSXv2S7esiJUsqehkxPhJRKiyBQgtIY8IU_shh1GEZGj4Uiyjs-qlpn7xnWK1uMhJrP41ivodRqdi4z7xStp0sBNMnMKvfdLWzwynKhEgVoamPXhOVBSlTuI1e8EZ5zxLAKpE6E78869N41PfPip4ChvX7HLDASZYdjfY2AP6fuwqm92qzaNMOhqC5D84s"/>
 </div>
 <h4 class="font-bold truncate text-slate-900 dark:text-white">Un Amor Inesperado</h4>
 <p class="text-sm text-slate-500 dark:text-slate-400">Isabella Rossi</p>
+<span class="text-xs text-primary font-medium">Literatura</span>
 </div>
-<div class="flex-shrink-0 w-48 group">
+<div class="flex-shrink-0 w-48 group" data-category="literatura" data-title="el secreto revelado" data-author="damien cole" data-isbn="978-0-123456-78-6">
 <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
 <img alt="Book cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQkYc1G289mi5J3Vs07k9dOXdDGFEoAY2sepATdBEmGpyiUDMB44G8h8U1Simbw6wiB9i8mW6iaIkGwXgi3K0E4JEqZ_Yt7-ANOQNfsxVbc6KdNmMMZYQfqh1Ei917xQlwLh98Tkhu0y4CzSnD-bBlxsKfrYEfq-L9gVeNzES3oUoFN-oE-FNfx-NxJgUbarC8jbntVpe99dPQxW7Rj_47Rm15HtB9XGWqb7OaSrrxw69O7dUhtuBs3tbzZTe9K-Um4Aiyg0-yjVA"/>
 </div>
 <h4 class="font-bold truncate text-slate-900 dark:text-white">El Secreto Revelado</h4>
 <p class="text-sm text-slate-500 dark:text-slate-400">Damien Cole</p>
+<span class="text-xs text-primary font-medium">Literatura</span>
 </div>
-<div class="flex-shrink-0 w-48 group">
+<div class="flex-shrink-0 w-48 group" data-category="literatura" data-title="eco del pasado" data-author="clara beaumont" data-isbn="978-0-123456-78-5">
 <div class="aspect-[3/4] rounded-lg overflow-hidden mb-3">
 <img alt="Book cover" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFGUXw9zauOfco3uKU3ruIQJGdDk14LW_V7wG2a7tnhitIVctlGH9ysycXGUFvJEUFfGQMN-2RBAfp_VcmEMHAJXImDcjCqswNJZ8Mz-ohGYe0y3aj1BvKmblYHv-FswqG0K_zm36yl9s5a5B_P_Z7vS72fCF6GuA4nDIW6FU_HdJWIbkBHJNijP6NZImXyFuXn771Teje6Q24wy5nDHEptYZWV8JcZqmRStVJmyFn57KhkCflEfpaX-vcnO25Q-eSPgVquAjqJdE"/>
 </div>
 <h4 class="font-bold truncate text-slate-900 dark:text-white">Eco del Pasado</h4>
 <p class="text-sm text-slate-500 dark:text-slate-400">Clara Beaumont</p>
+<span class="text-xs text-primary font-medium">Literatura</span>
 </div>
 </div>
 </div>
@@ -152,6 +161,9 @@
 
 <script>
 const searchInput = document.getElementById('search-books');
+const categoryButtons = document.querySelectorAll('.category-btn');
+
+// Funcionalidad de búsqueda
 if (searchInput) {
     searchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
@@ -161,15 +173,22 @@ if (searchInput) {
             }
         }
     });
-    
-    // También permitir búsqueda al hacer clic fuera del input
-    searchInput.addEventListener('blur', () => {
-        const query = searchInput.value.trim();
-        if (query) {
-            window.location.href = `busqueda.html?q=${encodeURIComponent(query)}`;
+}
+
+// Funcionalidad de categorías
+categoryButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const category = btn.dataset.category;
+        
+        if (category === 'all') {
+            // Si es "Todos", ir a búsqueda sin filtros
+            window.location.href = 'busqueda.html';
+        } else {
+            // Ir a búsqueda con la categoría específica
+            window.location.href = `busqueda.html?category=${encodeURIComponent(category)}`;
         }
     });
-}
+});
 </script>
 
 </body></html>
