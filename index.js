@@ -1,17 +1,17 @@
-const express = require('express')
+import express from 'express'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 const app = express()
 const port = 3000
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-// Servir carpeta "public" como frontend
-app.use(express.static('public'))
-app.get('/reservas', (req, res) => {
-  res.sendFile(__dirname + '/public/reservas.html')
-})
-
-// Ruta para procesar reservas (POST)
+// API Routes
 app.post('/api/reservas', (req, res) => {
   const { tipoSala, fecha, horaInicio, horaFin, nombre, email, motivo } = req.body
   
@@ -45,7 +45,26 @@ app.get('/api/reservas', (req, res) => {
   })
 })
 
+// En desarrollo, servir archivos estáticos de Vite
+// En producción, servir la carpeta dist
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'dist')))
+  
+  // Todas las rutas que no sean API, servir index.html (para React Router)
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'))
+  })
+} else {
+  // En desarrollo, solo servir la API
+  // Vite manejará el frontend en el puerto 5173
+}
+
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`)
-  console.log(`Página de reservas disponible en http://localhost:${port}/reservas`)
+  if (process.env.NODE_ENV !== 'production') {
+    console.log(`Frontend React disponible en http://localhost:5173`)
+    console.log(`API disponible en http://localhost:${port}/api`)
+  } else {
+    console.log(`Aplicación disponible en http://localhost:${port}`)
+  }
 })
