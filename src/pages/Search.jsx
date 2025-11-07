@@ -24,6 +24,19 @@ const allBooks = [
   { id: 20, title: 'Termodinámica', author: 'Yunus Cengel', category: 'ingenieria', isbn: '978-0-07-339817-4', image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=300&h=400&fit=crop' },
 ]
 
+const CATEGORY_LABELS = {
+  all: 'Todos',
+  matematicas: 'Matemáticas',
+  fisica: 'Física',
+  finanzas: 'Finanzas',
+  electronica: 'Electrónica',
+  programacion: 'Programación',
+  quimica: 'Química',
+  ingenieria: 'Ingeniería',
+  literatura: 'Literatura',
+}
+
+
 const categories = [
   { id: 'all', name: 'Todos' },
   { id: 'matematicas', name: 'Matemáticas' },
@@ -148,7 +161,10 @@ function Search() {
               </div>
               <h4 className="font-bold truncate text-slate-900 dark:text-white">{book.title}</h4>
               <p className="text-sm text-slate-500 dark:text-slate-400">{book.author}</p>
-              <span className="text-xs text-primary font-medium capitalize">{book.category}</span>
+              <span className="text-xs text-primary font-medium">
+  {CATEGORY_LABELS[book.category] ?? book.category}
+</span>
+
             </div>
           ))}
         </div>
