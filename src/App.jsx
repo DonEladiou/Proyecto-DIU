@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Search from './pages/Search'
 import Reservations from './pages/Reservations'
 import MyReservations from './pages/MyReservations'
+import Articulos from "./pages/Articulos";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
             <Route path="/busqueda" element={<Search />} />
             <Route path="/reservas" element={<Reservations />} />
             <Route path="/mis-reservas" element={<MyReservations />} />
+            {/* NUEVA RUTA */}
+            <Route path="/articulos" element={<Articulos />} />
           </Routes>
         </main>
         <Footer />
@@ -26,4 +29,3 @@ function App() {
 }
 
 export default App
-
