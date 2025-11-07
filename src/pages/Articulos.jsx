@@ -21,7 +21,7 @@ export default function Articulos() {
     <div className="p-6 max-w-5xl mx-auto">
       <h1 className="text-3xl font-bold mb-2">Artículos científicos</h1>
       <p className="text-gray-600 mb-6">
-        Accede a papers y bases académicas desde un solo lugar (MVP con enlaces de prueba).
+        Accede a papers y bases académicas desde un solo lugar.
       </p>
 
       <div className="grid md:grid-cols-3 gap-3 mb-4">
