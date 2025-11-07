@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Link } from "react-router-dom"
 
 const books = [
   { id: 1, title: 'El Reino Perdido', author: 'Elara Blackwood', category: 'literatura', isbn: '978-0-123456-78-9', image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCkr4qJ4EwQKUv9IIe6fY6OuUGXU7SAJCXkMWZWwIT2VCAAlfQyq0ejwoSJJfGgmjhZVJo4tb50DNALi9PA-_PSHQWW-CzTwotJR8I7m5UufS6IKgnEPNleghz8JmcmHaAy0hjaITO1PMNXyD_MUwKz99v1tbEOrttQxzEVJLJSYExfH8YZGhQP4IvfSrckQXt_182jm9p_2oVFA1ERmKeLtjYNmZ9Dd1f_FApl8XXVhXjXP8ApL7nTNkUMcdm3VYn4H9zePTROuNY' },
@@ -141,10 +142,14 @@ function Home() {
           <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-md mx-auto md:mx-0">
             Desde acceso a bases de datos académicas hasta eventos, descubre todo lo que nuestra biblioteca tiene para ofrecer.
           </p>
-          <button className="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2 mx-auto md:mx-0">
-            <span className="material-symbols-outlined">widgets</span>
-            Nuestros servicios
-          </button>
+          <Link
+  to="/que-puedes-hacer"   // 👈 pon aquí la ruta de destino (o /articulos /reservas /busqueda)
+  className="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2 mx-auto md:mx-0"
+>
+  <span className="material-symbols-outlined">widgets</span>
+  Nuestros servicios
+</Link>
+
         </div>
       </section>
     </div>

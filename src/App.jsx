@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Search from './pages/Search'
 import Reservations from './pages/Reservations'
 import MyReservations from './pages/MyReservations'
+import QuePuedesHacer from './pages/QuePuedesHacer.jsx'
 import Articulos from "./pages/Articulos";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/busqueda" element={<Search />} />
             <Route path="/reservas" element={<Reservations />} />
+            <Route path="/que-puedes-hacer" element={<QuePuedesHacer />} />
             <Route path="/mis-reservas" element={<MyReservations />} />
             {/* NUEVA RUTA */}
             <Route path="/articulos" element={<Articulos />} />
