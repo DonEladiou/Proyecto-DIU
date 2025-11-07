@@ -128,12 +128,12 @@ function Home() {
             ¿Necesitas un lugar tranquilo para concentrarte? Reserva una de nuestras salas de estudio individuales o grupales.
           </p>
           <button
-            onClick={() => navigate('/reservas')}
-            className="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2 mx-auto md:mx-0"
-          >
-            <span className="material-symbols-outlined">meeting_room</span>
-            Reservar ahora
-          </button>
+  onClick={() => navigate('/reservas')}
+  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-white hover:bg-primary/90 font-bold mx-auto md:mx-0 w-fit min-w-[200px] shrink-0"
+>
+  <span className="material-symbols-outlined">meeting_room</span>
+  Reservar ahora
+</button>
         </div>
         <div className="text-center md:text-left mt-8">
           <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
@@ -143,12 +143,13 @@ function Home() {
             Desde acceso a bases de datos académicas hasta eventos, descubre todo lo que nuestra biblioteca tiene para ofrecer.
           </p>
           <Link
-  to="/que-puedes-hacer"   // 👈 pon aquí la ruta de destino (o /articulos /reservas /busqueda)
-  className="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors flex items-center gap-2 mx-auto md:mx-0"
+  to="/que-puedes-hacer"
+  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-primary text-white hover:bg-primary/90 font-bold mx-auto md:mx-0 w-fit min-w-[200px] shrink-0"
 >
   <span className="material-symbols-outlined">widgets</span>
   Nuestros servicios
 </Link>
+
 
         </div>
       </section>
